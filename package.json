@@ -1,0 +1,23 @@
+{
+  "name": "stock-market-banckend",
+  "version": "1.0.0",
+  "description": "\"# stock-market-backend\" \r \"# stock-market-backend\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ccs.neu.edu/jalannin/stock-market-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.1",
+    "morgan": "^1.9.1"
+  }
+}
