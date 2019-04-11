@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 const databaseName = 'crypto';
+// THIS DB IS HOSTED ON THE CLOUD, THEREFORE DONT MESS WITH THE STRINGgit 
 var connectionString =
     'mongodb+srv://jalannin:banjokazooie%2127@cluster0-txyld.mongodb.net/test?retryWrites=true';
 connectionString += databaseName;
