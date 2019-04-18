@@ -19,7 +19,7 @@ exports.index = (req, res) =>{
 };
 
 exports.new = (req, res) => {
-    investorModel.createInvestor({
+    investorDao.createInvestor({
         _id: req.body._id,
         username: req.body.username,
         password: req.body.password,
@@ -44,7 +44,7 @@ exports.delete = (req, res) => {
 
 // Handle update contact info
 exports.update = (req, res) => {
-    investorModel
+    investorDao
         .updateInvestor(
             req.params.id,
             {username: req.body.username,
@@ -62,7 +62,7 @@ exports.update = (req, res) => {
 };
 
 exports.findById = (req, res) => {
-    investorModel
+    investorDao
         .findInvestorById(req.params.id)
         .then(foundInvestor => {
             res.json(foundInvestor)
