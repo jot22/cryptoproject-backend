@@ -1,13 +1,9 @@
-// Import express
 let express = require('express');
-// Import Body parser
 let bodyParser = require('body-parser');
-// Import Mongoose
 let mongoose = require('mongoose');
-// Initialize the app
 let app = express();
-// Import routes
-let apiRoutes = require("./api-routes/api-routes")
+let apiRoutes = require("./api-routes/api-routes");
+
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -15,7 +11,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 const databaseName = 'crypto';
-// THIS DB IS HOSTED ON THE CLOUD, THEREFORE DONT MESS WITH THE STRING
 var connectionString =
     'mongodb://localhost/';
 connectionString += databaseName;

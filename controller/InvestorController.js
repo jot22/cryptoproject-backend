@@ -1,20 +1,19 @@
-Investor = require('../data/models/investor.model.server');
+Investor = require('../data/models/investor/investor.model.server');
 const mongoose = require('mongoose');
-const investorSchema = require('../data/models/investor.schema.server');
+const investorSchema = require('../data/models/investor/investor.schema.server');
 const investorModel = mongoose.model('InvestorModel', investorSchema);
-const investorDao = require('../data/models/investor.dao.server');
+const investorDao = require('../data/models/investor/investor.dao.server');
 
 
-// Handle index actions
 exports.index = (req, res) =>{
-    investorModel.find((err, students) => {
+    investorModel.find((err, investors) => {
         if (err) {
             res.json({
                 status: "error",
                 message: err,
             });
         }
-        res.json(students);
+        res.json(investors);
     });
 };
 
@@ -28,7 +27,6 @@ exports.new = (req, res) => {
     }).then(newInvestor => res.json(newInvestor))
 };
 
-// Handle delete contact
 exports.delete = (req, res) => {
     investorModel.remove({
         _id: req.params.id
@@ -37,12 +35,11 @@ exports.delete = (req, res) => {
             res.send(err);
         res.json({
             status: "success",
-            message: 'Student deleted'
+            message: 'Investor deleted'
         });
     });
 };
 
-// Handle update contact info
 exports.update = (req, res) => {
     investorDao
         .updateInvestor(
@@ -50,9 +47,7 @@ exports.update = (req, res) => {
             {username: req.body.username,
                 password: req.body.password,
                 firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                gradYear: req.body.gradYear,
-                scholarship: req.body.scholarship})
+                lastName: req.body.lastName})
         .then(status => {
             res.json({
                 status: "success",
@@ -67,4 +62,4 @@ exports.findById = (req, res) => {
         .then(foundInvestor => {
             res.json(foundInvestor)
         })
-}
+};
