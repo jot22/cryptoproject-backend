@@ -57,3 +57,4 @@ exports.findById = (req, res) => {
             res.json(foundCypto)
         })
 };
+

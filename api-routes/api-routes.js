@@ -12,6 +12,8 @@ router.get('/', function (req, res) {
 
 var investorController = require('../controller/InvestorController');
 var cryptoController = require('../controller/CryptoController');
+var tradeController = require('../controller/TradeController');
+var brokerController = require('../controller/BrokerController');
 
 router.route('/investor')
     .get(investorController.index)
@@ -30,6 +32,26 @@ router.route('/crypto/:id')
     .get(cryptoController.findById)
     .put(cryptoController.update)
     .delete(cryptoController.delete);
+
+router.route('/broker')
+    .get(brokerController.index)
+    .post(brokerController.new);
+
+router.route('/broker/:id')
+    .get(brokerController.findById)
+    .put(brokerController.update)
+    .delete(brokerController.delete);
+
+router.route('/trade')
+    .get(tradeController.index);
+
+router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
+    .post(tradeController.buy);
+    //.get(tradeController.getTradeByInvestor);
+
+// router.route('/broker/:bid/investor/:iid/trade')
+    //.get(tradeController.getTradeByBroker)
+    //.post(tradeController.sell);
 
 // Export API routes
 module.exports = router;
