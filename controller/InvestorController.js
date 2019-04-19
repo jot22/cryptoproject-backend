@@ -24,7 +24,9 @@ exports.new = (req, res) => {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName
-    }).then(newInvestor => res.json(newInvestor))
+    }).then(newInvestor => {
+        res.json(newInvestor)
+    })
 };
 
 exports.delete = (req, res) => {
