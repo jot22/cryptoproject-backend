@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b01f7b-e239-4d45-8609-71c240eab67b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/models/trade/trade.model.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-routes/api-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api-routes/api-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/CryptoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CryptoController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/broker/broker.dao.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/broker/broker.dao.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/broker/broker.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/broker/broker.model.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/broker/broker.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/broker/broker.schema.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/purchase/purchase.dao.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/TradeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/purchase/purchase.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/BrokerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/purchase/purchase.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/trade/trade.schema.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/TradeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/TradeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/trade/trade.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/trade/trade.schema.server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api-routes/api-routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="269">
+              <caret line="49" column="19" selection-start-line="49" selection-end-line="50" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -49,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/models/trade/trade.schema.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -65,28 +58,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
+        <entry file="file://$PROJECT_DIR$/controller/InvestorController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/TradeController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="85">
+              <caret line="44" selection-start-line="44" selection-end-line="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/models/broker/broker.dao.server.js">
+        <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="82">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/models/investor/investor.dao.server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/TradeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -96,15 +98,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/BrokerController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="14" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -174,10 +167,10 @@
         <option value="$PROJECT_DIR$/data/models/broker/broker.model.server.js" />
         <option value="$PROJECT_DIR$/data/models/broker/broker.dao.server.js" />
         <option value="$PROJECT_DIR$/controller/BrokerController.js" />
-        <option value="$PROJECT_DIR$/api-routes/api-routes.js" />
         <option value="$PROJECT_DIR$/data/models/trade/trade.schema.server.js" />
         <option value="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" />
         <option value="$PROJECT_DIR$/controller/TradeController.js" />
+        <option value="$PROJECT_DIR$/api-routes/api-routes.js" />
       </list>
     </option>
   </component>
@@ -219,6 +212,13 @@
               <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
@@ -270,12 +270,12 @@
       <updated>1555004706263</updated>
       <workItem from="1555004707541" duration="6858000" />
       <workItem from="1555616789273" duration="662000" />
-      <workItem from="1555618207307" duration="13556000" />
+      <workItem from="1555618207307" duration="17101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21076000" />
+    <option name="totallyTimeSpent" value="24621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
@@ -351,20 +351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/investor/investor.dao.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" lean-forward="true" selection-end-line="23" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/InvestorController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/models/broker/broker.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -393,16 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-routes/api-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/models/broker/broker.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -417,13 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/models/trade/trade.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -431,17 +400,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
+    <entry file="file://$PROJECT_DIR$/controller/InvestorController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="85">
+          <caret line="44" selection-start-line="44" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/models/investor/investor.dao.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/TradeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="255">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-routes/api-routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="49" column="19" selection-start-line="49" selection-end-line="50" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

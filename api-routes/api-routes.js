@@ -45,13 +45,15 @@ router.route('/broker/:id')
 router.route('/trade')
     .get(tradeController.index);
 
-router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
+router.route('/investor/:iid/broker/:bid/trade')
+    .get(tradeController.findTradesByInvestor)
     .post(tradeController.buy);
-    //.get(tradeController.getTradeByInvestor);
 
-// router.route('/broker/:bid/investor/:iid/trade')
-    //.get(tradeController.getTradeByBroker)
-    //.post(tradeController.sell);
+router.route('/broker/:bid/investor/:iid/trade')
+    .get(tradeController.findTradesByBroker);
+
+router.route('/crypto/:cid/trade')
+    .put(tradeController.sell);
 
 // Export API routes
 module.exports = router;
