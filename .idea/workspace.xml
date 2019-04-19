@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b01f7b-e239-4d45-8609-71c240eab67b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/models/broker/broker.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/broker/broker.schema.server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/data/models/broker/broker.schema.server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret lean-forward="true" />
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -234,12 +233,12 @@
       <updated>1555004706263</updated>
       <workItem from="1555004707541" duration="6858000" />
       <workItem from="1555616789273" duration="662000" />
-      <workItem from="1555618207307" duration="6053000" />
+      <workItem from="1555618207307" duration="6567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13573000" />
+    <option name="totallyTimeSpent" value="14087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
@@ -375,7 +374,7 @@
     <entry file="file://$PROJECT_DIR$/data/models/broker/broker.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret lean-forward="true" />
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
