@@ -46,14 +46,17 @@ router.route('/trade')
     .get(tradeController.index);
 
 router.route('/investor/:iid/broker/:bid/trade')
-    .get(tradeController.findTradesByInvestor)
-    .post(tradeController.buy);
+    .get(tradeController.findTradesByInvestor);
 
 router.route('/broker/:bid/investor/:iid/trade')
     .get(tradeController.findTradesByBroker);
 
+router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
+    .post(tradeController.buy);
+
 router.route('/crypto/:cid/trade')
-    .put(tradeController.sell);
+    .put(tradeController.sell)
+    .delete(tradeController.removeCrypto);
 
 // Export API routes
 module.exports = router;

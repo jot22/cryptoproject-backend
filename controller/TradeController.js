@@ -27,21 +27,34 @@ exports.findTradesByBroker = function(req, res) {
 };
 
 exports.sell = (req, res) => {
-    var crypto = tradeDao.findTradeById(req.params.cid);
-    return tradeDao
-        .sellCrypto(
-            req.params.id, {
-                _id: crypto._id,
-                tokens:  crypto.tokens,
-                priceWhenBought: crypto.priceWhenBought,
-                sold: true,
-                crypto: crypto.crypto,
-                investor: crypto.investor,
-                broker: crypto.breakAfter
-            }).then(status => {
-                res.json({
-                    status: "success",
-                    message: status
-                });
+    tradeDao.findTradeById(req.params.cid).then(crypto =>
+        tradeDao
+            .sellCrypto(
+                req.params.id, {
+                    _id: crypto._id,
+                    tokens:  crypto.tokens,
+                    priceWhenBought: crypto.priceWhenBought,
+                    sold: true,
+                    crypto: crypto.crypto,
+                    investor: crypto.investor,
+                    broker: crypto.breakAfter
+                }).then(status => {
+            res.json({
+                status: "success",
+                message: status
             });
+        }));
+};
+
+exports.removeCrypto = (req, res) => {
+    tradeModel.remove({
+        _id: req.params.id
+    }, (err, crypto) =>{
+        if (err)
+            res.send(err);
+        res.json({
+            status: "success",
+            message: 'Crypto deleted'
+        });
+    });
 };

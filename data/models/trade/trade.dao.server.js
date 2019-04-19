@@ -7,6 +7,7 @@ buyCrypto = (investorId, brokerId, cryptoId, purchase) => {
         _id: purchase._id,
         tokens: purchase.tokens,
         priceWhenBought: purchase.priceWhenBought,
+        sold: purchase.sold,
         crypto: cryptoId,
         investor: investorId,
         broker: brokerId
