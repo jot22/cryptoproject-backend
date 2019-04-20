@@ -34,4 +34,7 @@ findTradesByInvestor = (investorId) =>
 findTradesByBroker = (brokerId) =>
     tradeModel.find().then(trades => trades.filter(trade => brokerId == trade.broker));
 
-module.exports = {buyCrypto, findAllTrades, findTradesByInvestor, findTradesByBroker, sellCrypto, findTradeById};
+findTradesByCrypto = (cryptoId) =>
+    tradeModel.find().then(trades => trades.filter(trade => cryptoId == trade.crypto));
+
+module.exports = {buyCrypto, findTradesByCrypto, findAllTrades, findTradesByInvestor, findTradesByBroker, sellCrypto, findTradeById};

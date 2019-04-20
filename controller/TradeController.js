@@ -26,6 +26,11 @@ exports.findTradesByBroker = function(req, res) {
         .then(trades => res.json(trades));
 };
 
+exports.findTradeByCrypto = function(req, res) {
+    tradeDao.findTradesByCrypto(req.params.cid)
+        .then(trades => res.json(trades));
+};
+
 exports.sell = (req, res) => {
     tradeDao.findTradeById(req.params.cid).then(crypto =>
         tradeDao

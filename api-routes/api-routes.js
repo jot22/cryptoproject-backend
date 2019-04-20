@@ -56,12 +56,14 @@ router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
     .post(tradeController.buy);
 
 router.route('/crypto/:cid/trade')
+    .get(tradeController.findTradeByCrypto)
     .put(tradeController.sell)
     .delete(tradeController.removeCrypto);
 
 router.route('/coin')
-    .get(coinMarketController.get)
-    .put(coinMarketController.update);
+    .get(coinMarketController.findAll)
+    .put(coinMarketController.update)
+    .post(coinMarketController.get);
 
 // Export API routes
 module.exports = router;
