@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b01f7b-e239-4d45-8609-71c240eab67b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controller/CoinMarketController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-routes/api-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api-routes/api-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/TradeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/TradeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CryptoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CryptoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,19 +22,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/models/broker/broker.schema.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api-routes/api-routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="354">
-              <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -39,28 +34,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/models/trade/trade.schema.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/models/trade/trade.model.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/InvestorController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="41" selection-end-column="7" />
+            <state relative-caret-position="544">
+              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="41" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -68,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="527">
               <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
             </state>
           </provider>
@@ -92,11 +69,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/TradeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+            <state relative-caret-position="269">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/CoinMarketController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="28" column="83" selection-start-line="28" selection-start-column="83" selection-end-line="28" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/models/crypto/crypto.dao.server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/CryptoController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="28" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -104,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="85">
+              <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -126,6 +130,8 @@
       <find>stock</find>
       <find>crypt</find>
       <find>cry</find>
+      <find>background</find>
+      <find>background-color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,79 +162,82 @@
         <option value="$PROJECT_DIR$/controller/InvestorController.js" />
         <option value="$PROJECT_DIR$/data/models/purchase/purchase.schema.server.js" />
         <option value="$PROJECT_DIR$/data/models/investor/investor.schema.server.js" />
-        <option value="$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js" />
         <option value="$PROJECT_DIR$/data/models/purchase/purchase.dao.server.js" />
         <option value="$PROJECT_DIR$/controller/PurchaseController.js" />
         <option value="$PROJECT_DIR$/data/models/purchase/purchase.model.server.js" />
         <option value="$PROJECT_DIR$/data/models/trade/trade.model.server.js" />
-        <option value="$PROJECT_DIR$/controller/CryptoController.js" />
         <option value="$PROJECT_DIR$/data/models/broker/broker.schema.server.js" />
         <option value="$PROJECT_DIR$/data/models/broker/broker.model.server.js" />
         <option value="$PROJECT_DIR$/data/models/broker/broker.dao.server.js" />
         <option value="$PROJECT_DIR$/controller/BrokerController.js" />
         <option value="$PROJECT_DIR$/data/models/trade/trade.schema.server.js" />
         <option value="$PROJECT_DIR$/data/models/trade/trade.dao.server.js" />
-        <option value="$PROJECT_DIR$/api-routes/api-routes.js" />
         <option value="$PROJECT_DIR$/controller/TradeController.js" />
+        <option value="$USER_HOME$/Downloads/casper/assets/css/global.css" />
+        <option value="$USER_HOME$/Downloads/casper/assets/css/screen.css" />
+        <option value="$PROJECT_DIR$/api-routes/api-routes.js" />
+        <option value="$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js" />
+        <option value="$PROJECT_DIR$/controller/CryptoController.js" />
+        <option value="$PROJECT_DIR$/controller/CoinMarketController.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1943" />
-    <option name="height" value="1103" />
+    <option name="x" value="43" />
+    <option name="y" value="27" />
+    <option name="width" value="1317" />
+    <option name="height" value="767" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-banck-end" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-banck-end" type="462c0819:PsiDirectoryNode" />
               <item name="api-routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-banck-end" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-banck-end" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-banck-end" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crypto-banckend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-market-banckend" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-banck-end" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="trade" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crypto-frontend" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -262,17 +271,19 @@
       <updated>1555004706263</updated>
       <workItem from="1555004707541" duration="6858000" />
       <workItem from="1555616789273" duration="662000" />
-      <workItem from="1555618207307" duration="18870000" />
+      <workItem from="1555618207307" duration="19529000" />
+      <workItem from="1555691156261" duration="9825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26390000" />
+    <option name="totallyTimeSpent" value="36874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="npm" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -305,13 +316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/crypto/crypto.dao.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -357,24 +361,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/CryptoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/models/broker/broker.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-end-line="6" />
+          <caret line="5" column="22" selection-start-line="5" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js">
+    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="153">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -382,6 +379,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/InvestorController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="41" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -399,41 +410,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/InvestorController.js">
+    <entry file="file://$USER_HOME$/GBTC Website/greater-boston-website/current/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="41" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-routes/api-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+        <state relative-caret-position="-173">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/models/trade/trade.dao.server.js">
+    <entry file="file://$USER_HOME$/GBTC Website/greater-boston-website/current/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_casper.zip/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2958" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_casper.zip/assets/js/infinitescroll.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_casper.zip/assets/js/jquery.fitvids.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/casper/assets/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="1640" column="17" lean-forward="true" selection-start-line="1640" selection-start-column="17" selection-end-line="1640" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/casper/assets/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2907">
+          <caret line="171" column="1" lean-forward="true" selection-start-line="171" selection-start-column="1" selection-end-line="171" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/TradeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+        <state relative-caret-position="269">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-routes/api-routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/models/crypto/crypto.dao.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/models/crypto/crypto.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CryptoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="28" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CoinMarketController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="28" column="83" selection-start-line="28" selection-start-column="83" selection-end-line="28" selection-end-column="83" />
         </state>
       </provider>
     </entry>
