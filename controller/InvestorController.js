@@ -23,7 +23,8 @@ exports.new = (req, res) => {
         username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        wallet: req.body.wallet
     }).then(newInvestor => {
         res.json(newInvestor)
     })
@@ -49,7 +50,9 @@ exports.update = (req, res) => {
             {username: req.body.username,
                 password: req.body.password,
                 firstName: req.body.firstName,
-                lastName: req.body.lastName})
+                lastName: req.body.lastName,
+                wallet: req.body.wallet
+            })
         .then(status => {
             res.json({
                 status: "success",
