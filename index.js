@@ -2,6 +2,7 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let app = express();
+let cors = require('cors');
 let apiRoutes = require("./api-routes/api-routes");
 
 // Configure bodyparser to handle post requests
@@ -9,6 +10,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+app.use(cors());
 // Connect to Mongoose and set connection variable
 const databaseName = 'crypto';
 var connectionString =
@@ -23,9 +25,6 @@ app.get('/', (req, res) => res.send('Hello World'));
 // Use Api routes in the App
 app.use('/api', apiRoutes)
 // Launch app to listen to specified port
-app.listen(port, function () {
-    console.log("Running RestHub on port " + port);
-});
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin","*");
     res.header("Access-Control-Allow-Headers",
@@ -34,5 +33,8 @@ app.use(function(req, res, next) {
         "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Credentials", "true");
     next();
+});
+app.listen(port, function () {
+    console.log("Running RestHub on port " + port);
 });
 
