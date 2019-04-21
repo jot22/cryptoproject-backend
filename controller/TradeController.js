@@ -32,7 +32,7 @@ exports.findTradeByCrypto = function(req, res) {
 };
 
 exports.sell = (req, res) => {
-    tradeDao.findTradeById(req.params.cid).then(trade =>
+    tradeDao.findTradeById(req.params.tid).then(trade =>
         tradeDao
             .sellCrypto(
                 req.params.id, {

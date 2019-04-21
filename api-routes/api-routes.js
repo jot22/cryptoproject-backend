@@ -47,8 +47,11 @@ router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
 
 router.route('/crypto/:cid/trade')
     .get(tradeController.findTradeByCrypto)
-    .put(tradeController.sell)
     .delete(tradeController.removeCrypto);
+
+router.route('/trade/:tid')
+    .put(tradeController.sell);
+
 
 router.route('/coin')
     .put(coinMarketController.update)
