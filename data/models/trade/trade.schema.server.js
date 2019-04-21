@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
+const status = ["PENDING", "PROCESSED"];
+
 const tradeSchema = mongoose.Schema({
-    _id: Number,
     tokens: {type: Number, required: true},
     priceWhenBought: {type: Number, required: true},
     sold: Boolean,
-    crypto: {type: Number, ref: 'CryptoModel'},
-    investor: {type: Number, ref: 'InvestorModel'},
-    broker: {type: Number, ref: 'BrokerModel'}
+    status: {type: String, enum: status, required: true},
+    crypto: {type: mongoose.Schema.Types.ObjectId, ref: 'CryptoModel'},
+    investor: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'},
+    broker: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}
 }, {collection: 'purchases'});
 module.exports = tradeSchema;

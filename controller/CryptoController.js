@@ -19,13 +19,10 @@ exports.index = (req, res) =>{
 
 exports.new = (req, res) => {
     cryptoDao.createCrypto({
-        _id: req.body._id,
         name: req.body.name,
         symbol: req.body.symbol,
-        priceWhenLoaded: req.body.priceWhenLoaded,
-        percentChange24: req.body.percentChange24,
-        volume: req.body.volume,
-        marketCap: req.body.mark
+        listOfUsers: req.body.listOfUsers,
+
     }).then(newCrypto => res.json(newCrypto))
 };
 
@@ -47,13 +44,9 @@ exports.update = (req, res) => {
         .updateCrypto(
             req.params.id,
             {
-                _id: req.body._id,
                 name: req.body.name,
                 symbol: req.body.symbol,
-                priceWhenLoaded: req.body.priceWhenLoaded,
-                percentChange24: req.body.percentChange24,
-                volume: req.body.volume,
-                marketCap: req.body.mark
+                listOfUsers: req.body.listOfUsers
             })
         .then(status => {
             res.json({

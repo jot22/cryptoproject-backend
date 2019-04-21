@@ -10,21 +10,19 @@ router.get('/', function (req, res) {
     );
 });
 
-var investorController = require('../controller/InvestorController');
 var cryptoController = require('../controller/CryptoController');
 var tradeController = require('../controller/TradeController');
-var brokerController = require('../controller/BrokerController');
 var coinMarketController = require('../controller/CoinMarketController');
 var userController = require('../controller/UserController');
 
 router.route('/user')
-    .get(investorController.findAll)
-    .post(investorController.new);
+    .get(userController.findAll)
+    .post(userController.new);
 
 router.route('/user/:id')
-    .get(investorController.findById)
-    .put(investorController.update)
-    .delete(investorController.delete);
+    .get(userController.findById)
+    .put(userController.update)
+    .delete(userController.delete);
 
 router.route('/crypto')
     .get(cryptoController.index)
@@ -35,25 +33,16 @@ router.route('/crypto/:id')
     .put(cryptoController.update)
     .delete(cryptoController.delete);
 
-router.route('/broker')
-    .get(brokerController.index)
-    .post(brokerController.new);
-
-router.route('/broker/:id')
-    .get(brokerController.findById)
-    .put(brokerController.update)
-    .delete(brokerController.delete);
-
 router.route('/trade')
     .get(tradeController.index);
 
-router.route('/user/:iid/broker/:bid/trade')
+router.route('/investor/:iid/broker/:bid/trade')
     .get(tradeController.findTradesByInvestor);
 
 router.route('/broker/:bid/user/:iid/trade')
     .get(tradeController.findTradesByBroker);
 
-router.route('/user/:iid/broker/:bid/crypto/:cid/trade')
+router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
     .post(tradeController.buy);
 
 router.route('/crypto/:cid/trade')

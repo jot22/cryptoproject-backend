@@ -4,10 +4,10 @@ const tradeDao = require('../data/models/trade/trade.dao.server');
 
 exports.buy = function (req, res) {
     tradeDao.buyCrypto(req.params.iid, req.params.bid, req.params.cid, {
-        _id: req.body._id,
         tokens: req.body.tokens,
         priceWhenBought: req.body.priceWhenBought,
-        sold: false
+        sold: false,
+        status: req.body.status
     }).then(newTrade => res.json(newTrade))
 };
 
@@ -32,17 +32,18 @@ exports.findTradeByCrypto = function(req, res) {
 };
 
 exports.sell = (req, res) => {
-    tradeDao.findTradeById(req.params.cid).then(crypto =>
+    tradeDao.findTradeById(req.params.cid).then(trade =>
         tradeDao
             .sellCrypto(
                 req.params.id, {
-                    _id: crypto._id,
-                    tokens:  crypto.tokens,
-                    priceWhenBought: crypto.priceWhenBought,
+                    _id: trade._id,
+                    tokens:  trade.tokens,
+                    priceWhenBought: trade.priceWhenBought,
                     sold: true,
-                    crypto: crypto.crypto,
-                    investor: crypto.investor,
-                    broker: crypto.breakAfter
+                    status: trade.status,
+                    crypto: trade.crypto,
+                    investor: trade.investor,
+                    broker: trade.breakAfter
                 }).then(status => {
             res.json({
                 status: "success",

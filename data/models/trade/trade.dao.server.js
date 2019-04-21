@@ -4,10 +4,10 @@ const tradeModel = mongoose.model('TradeModel', tradeSchema);
 
 buyCrypto = (investorId, brokerId, cryptoId, purchase) => {
     var newPurchase = {
-        _id: purchase._id,
         tokens: purchase.tokens,
         priceWhenBought: purchase.priceWhenBought,
         sold: purchase.sold,
+        status: purchase.status,
         crypto: cryptoId,
         investor: investorId,
         broker: brokerId
