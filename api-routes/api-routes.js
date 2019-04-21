@@ -60,8 +60,11 @@ router.route('/crypto/:cid/trade')
     .delete(tradeController.removeCrypto);
 
 router.route('/coin')
-    .get(coinMarketController.get)
+    // .get(coinMarketController.get)
     .put(coinMarketController.update);
+
+router.route('/coin/:symbol')
+    .get(coinMarketController.get);
 
 // Export API routes
 module.exports = router;

@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const rp = require('request-promise');
 const cryptoDao = require('../data/models/crypto/crypto.dao.server');
 
-exports.get = () => {
+exports.get = function(req,res) {
     const requestOptions = {
         method: 'GET',
         uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest',
         qs: {
-            symbol: "BTC",
-            convert: 'USD'
+            symbol: req.params.symbol
         },
         headers: {
             'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
