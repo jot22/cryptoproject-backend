@@ -25,13 +25,13 @@ exports.get = function(req,res) {
             percentChange24: response.data.BTC.quote.USD.percent_change_24h,
             volume: response.data.BTC.quote.USD.volume_24h,
             marketCap: response.data.BTC.quote.USD.market_cap
-        }).then(newCrypto => console.log('API call response:', response.data.BTC));
+        }).then(newCrypto => res.json({response}));
     }).catch((err) => {
-        console.log('API call error:', err.message);
+        res.json({err});
     });
 };
 
-exports.update = () => {
+exports.update = (req, res) => {
     const requestOptions = {
         method: 'GET',
         uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest',
@@ -55,8 +55,32 @@ exports.update = () => {
             percentChange24: response.data.BTC.quote.USD.percent_change_24h,
             volume: response.data.BTC.quote.USD.volume_24h,
             marketCap: response.data.BTC.quote.USD.market_cap
-        }).then(newCrypto => console.log('API call response:', response.data.BTC));
+        }).then(newCrypto => res.json({response}));
     }).catch((err) => {
-        console.log('API call error:', err.message);
+        res.json({err});
+    });
+};
+
+exports.findAll = (req, res) => {
+    // This example is in Node ES6 using the request-promise library
+    const rp = require('request-promise');
+    const requestOptions = {
+        method: 'GET',
+        uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+        qs: {
+            start: 1,
+            limit: 5000,
+            convert: 'USD'
+        },
+        headers: {
+            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+        },
+        json: true,
+        gzip: true
+    };
+    rp(requestOptions).then(response => {
+        res.json(response);
+    }).catch((err) => {
+        res.json(err);
     });
 };
