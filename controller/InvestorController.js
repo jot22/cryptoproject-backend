@@ -5,7 +5,7 @@ const investorModel = mongoose.model('InvestorModel', investorSchema);
 const investorDao = require('../data/models/investor/investor.dao.server');
 
 
-exports.index = (req, res) =>{
+exports.index = (req, res) => {
     investorModel.find((err, investors) => {
         if (err) {
             res.json({
@@ -33,7 +33,7 @@ exports.new = (req, res) => {
 exports.delete = (req, res) => {
     investorModel.remove({
         _id: req.params.id
-    }, (err, investor) =>{
+    }, (err, investor) => {
         if (err)
             res.send(err);
         res.json({
@@ -47,7 +47,8 @@ exports.update = (req, res) => {
     investorDao
         .updateInvestor(
             req.params.id,
-            {username: req.body.username,
+            {
+                username: req.body.username,
                 password: req.body.password,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -67,4 +68,9 @@ exports.findById = (req, res) => {
         .then(foundInvestor => {
             res.json(foundInvestor)
         })
+};
+
+exports.findAll = (req, res) => {
+    investorDao.findAllInvestors()
+        .then(investors => res.send(investors))
 };

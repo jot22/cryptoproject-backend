@@ -15,9 +15,10 @@ var cryptoController = require('../controller/CryptoController');
 var tradeController = require('../controller/TradeController');
 var brokerController = require('../controller/BrokerController');
 var coinMarketController = require('../controller/CoinMarketController');
+var userController = require('../controller/UserController');
 
 router.route('/investor')
-    .get(investorController.index)
+    .get(investorController.findAll)
     .post(investorController.new);
 
 router.route('/investor/:id')
@@ -68,6 +69,19 @@ router.route('/coin')
 
 router.route('/coin/:symbol')
     .get(coinMarketController.get);
+
+
+router.route('/register')
+    .post(userController.register);
+
+router.route('/login')
+    .post(userController.login);
+
+router.route('/logout')
+    .post(userController.logout);
+
+router.route('/profile')
+    .get(userController.profile);
 
 // Export API routes
 module.exports = router;
