@@ -1,12 +1,12 @@
-Investor = require('../data/models/investor/investor.model.server');
+User = require('../data/models/user/user.model.server');
 const mongoose = require('mongoose');
-const investorSchema = require('../data/models/investor/investor.schema.server');
-const investorModel = mongoose.model('InvestorModel', investorSchema);
-const investorDao = require('../data/models/investor/investor.dao.server');
+const userSchema = require('../data/models/user/user.schema.server');
+const userModel = mongoose.model('InvestorModel', userSchema);
+const userDao = require('../data/models/user/user.dao.server');
 
 
 exports.index = (req, res) => {
-    investorModel.find((err, investors) => {
+    userModel.find((err, investors) => {
         if (err) {
             res.json({
                 status: "error",
@@ -18,12 +18,13 @@ exports.index = (req, res) => {
 };
 
 exports.new = (req, res) => {
-    investorDao.createInvestor({
+    userDao.createUser({
         _id: req.body._id,
         username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
+        type: req.body.type,
         wallet: req.body.wallet
     }).then(newInvestor => {
         res.json(newInvestor)
@@ -31,27 +32,28 @@ exports.new = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-    investorModel.remove({
+    userModel.remove({
         _id: req.params.id
-    }, (err, investor) => {
+    }, (err, user) => {
         if (err)
             res.send(err);
         res.json({
             status: "success",
-            message: 'Investor deleted'
+            message: 'User deleted'
         });
     });
 };
 
 exports.update = (req, res) => {
-    investorDao
-        .updateInvestor(
+    userDao
+        .updateUser(
             req.params.id,
             {
                 username: req.body.username,
                 password: req.body.password,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
+                type: req.body.type,
                 wallet: req.body.wallet
             })
         .then(status => {
@@ -63,14 +65,14 @@ exports.update = (req, res) => {
 };
 
 exports.findById = (req, res) => {
-    investorDao
-        .findInvestorById(req.params.id)
-        .then(foundInvestor => {
-            res.json(foundInvestor)
+    userDao
+        .findUserById(req.params.id)
+        .then(foundUser => {
+            res.json(foundUser)
         })
 };
 
 exports.findAll = (req, res) => {
-    investorDao.findAllInvestors()
-        .then(investors => res.send(investors))
+    userDao.findAllUsers()
+        .then(users => res.send(users))
 };

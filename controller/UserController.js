@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const investorDao = require('../data/models/investor/investor.dao.server');
+const userDao = require('../data/models/user/user.dao.server');
 
 exports.register = (req, res) => {
     var username = req.body.username;
@@ -11,12 +11,12 @@ exports.register = (req, res) => {
         lastName: '',
         wallet: 0
     };
-    investorDao.findInvestorByUsername(username)
+    userDao.findUserByUsername(username)
         .then(function (user) {
             if (user) {
                 res.send(400);
             } else {
-                investorDao.createInvestor(newUser)
+                userDao.createUser(newUser)
                     .then(function (user) {
                         req.session['currentUser'] = user;
                         res.send(user);
@@ -28,7 +28,7 @@ exports.register = (req, res) => {
 exports.login = (req, res) => {
     var username = req.body.username;
     var password = req.body.password;
-    investorDao.findInvestorByCredentials(username, password)
+    userDao.findUserByCredentials(username, password)
         .then(function (user) {
             if (user) {
                 req.session['currentUser'] = user;

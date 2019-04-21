@@ -17,11 +17,11 @@ var brokerController = require('../controller/BrokerController');
 var coinMarketController = require('../controller/CoinMarketController');
 var userController = require('../controller/UserController');
 
-router.route('/investor')
+router.route('/user')
     .get(investorController.findAll)
     .post(investorController.new);
 
-router.route('/investor/:id')
+router.route('/user/:id')
     .get(investorController.findById)
     .put(investorController.update)
     .delete(investorController.delete);
@@ -47,13 +47,13 @@ router.route('/broker/:id')
 router.route('/trade')
     .get(tradeController.index);
 
-router.route('/investor/:iid/broker/:bid/trade')
+router.route('/user/:iid/broker/:bid/trade')
     .get(tradeController.findTradesByInvestor);
 
-router.route('/broker/:bid/investor/:iid/trade')
+router.route('/broker/:bid/user/:iid/trade')
     .get(tradeController.findTradesByBroker);
 
-router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
+router.route('/user/:iid/broker/:bid/crypto/:cid/trade')
     .post(tradeController.buy);
 
 router.route('/crypto/:cid/trade')
