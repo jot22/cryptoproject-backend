@@ -36,10 +36,10 @@ router.route('/crypto/:id')
 router.route('/trade')
     .get(tradeController.index);
 
-router.route('/investor/:iid/broker/:bid/trade')
+router.route('/investor/:iid/trade')
     .get(tradeController.findTradesByInvestor);
 
-router.route('/broker/:bid/user/:iid/trade')
+router.route('/broker/:bid/trade')
     .get(tradeController.findTradesByBroker);
 
 router.route('/investor/:iid/broker/:bid/crypto/:cid/trade')
