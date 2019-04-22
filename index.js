@@ -2,6 +2,8 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let app = express();
+const cors = require('cors');
+
 let apiRoutes = require("./api-routes/api-routes");
 let session = require('express-session');
 const userSchema = require('./data/models/user/user.schema.server');
@@ -14,6 +16,7 @@ const userDao = require('./data/models/user/user.dao.server');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(session({
     resave: false,
@@ -70,32 +73,6 @@ app.post('/api/register', function(req, res) {
         res.json({err});
     });
 });
-
-app.post('/api/login', (req, res) => {
-    var username = req.body.username;
-    var password = req.body.password;
-    userDao.findUserByCredentials(username, password)
-        .then(function (user) {
-            if (user) {
-                req.session['currentUser'] = user;
-                res.send(user);
-            } else {
-                res.send(400);
-            }
-        }).catch((err) => {
-        res.json({err});
-    })
-});
-
-app.post('/api/logout', (req, res) => {
-    req.session.destroy();
-    res.send(200);
-});
-
-app.get('/api/profile', (req, res) => {
-    res.send(req.session['currentUser']);
-});
-
 
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
