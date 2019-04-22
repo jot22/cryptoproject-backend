@@ -2,16 +2,19 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let app = express();
-let cors = require('cors');
 let apiRoutes = require("./api-routes/api-routes");
 let session = require('express-session');
+const userSchema = require('./data/models/user/user.schema.server');
+const userModel = mongoose.model('UserModel', userSchema);
+let userController = require('./controller/UserController');
+const userDao = require('./data/models/user/user.dao.server');
+
 
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
-app.use(cors());
 app.use(session({
     resave: false,
     saveUninitialized: true,
@@ -40,6 +43,60 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Credentials", "true");
     next();
 });
+
+app.post('/api/register', function(req, res) {
+    var newUser = {
+        username: req.body.username,
+        password: req.body.password,
+        firstName: '',
+        lastName: '',
+        type: "INVESTOR",
+        wallet: 0
+    };
+    userDao.findUserByUsername(req.body.username)
+        .then(user => {
+            if (user) {
+                res.send(400);
+            } else {
+                userDao.createUser(newUser)
+                    .then((user) => {
+                        req.session['currentUser'] = user;
+                        res.send(user);
+                    }).catch((err) => {
+                    res.json({err});
+                });
+            }
+        }).catch((err) => {
+        res.json({err});
+    });
+});
+
+app.post('/api/login', (req, res) => {
+    var username = req.body.username;
+    var password = req.body.password;
+    userDao.findUserByCredentials(username, password)
+        .then(function (user) {
+            if (user) {
+                req.session['currentUser'] = user;
+                res.send(user);
+            } else {
+                res.send(400);
+            }
+        }).catch((err) => {
+        res.json({err});
+    })
+});
+
+app.post('/api/logout', (req, res) => {
+    req.session.destroy();
+    res.send(200);
+});
+
+app.get('/api/profile', (req, res) => {
+    res.send(req.session['currentUser']);
+});
+
+
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });

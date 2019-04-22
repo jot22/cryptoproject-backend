@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const userTypes = ["INVESTOR", "BROKER"];
+const userTypes = ["INVESTOR", "BROKER", ""];
 
 const investorSchema = mongoose.Schema({
     username: String,

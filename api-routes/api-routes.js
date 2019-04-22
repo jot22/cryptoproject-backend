@@ -62,16 +62,6 @@ router.route('/coin')
 router.route('/coin/:symbol')
     .get(coinMarketController.get);
 
-
-router.route('/register')
-    .post(userController.register);
-
-router.route('/login')
-    .post(userController.login);
-
-router.route('/logout')
-    .post(userController.logout);
-
 router.route('/profile')
     .get(userController.profile);
 
