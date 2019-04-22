@@ -17,7 +17,8 @@ var userController = require('../controller/UserController');
 
 router.route('/user')
     .get(userController.findAll)
-    .post(userController.new);
+    .post(userController.new)
+    .delete(userController.deleteAll);
 
 router.route('/user/:id')
     .get(userController.findById)
@@ -68,8 +69,8 @@ router.route('/login')
 router.route('/logout')
     .post(userController.logout);
 
-router.route('/profile')
-    .get(userController.profile);
+// router.route('/profile')
+//     .get(userController.profile);
 
 // router.route('/register')
 //     .post(userController.register);

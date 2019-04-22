@@ -63,6 +63,10 @@ exports.new = (req, res) => {
     })
 };
 
+exports.deleteAll = (req, res) => {
+  userModel.remove().then(res.send(200));
+};
+
 exports.delete = (req, res) => {
     userModel.remove({
         _id: req.params.id
@@ -130,33 +134,33 @@ exports.logout = (res, req) => {
     res.send(200);
 };
 
-exports.profile = (res, req) => {
-    res.send(req.session['currentUser']);
-};
+// exports.profile = (res, req) => {
+//     res.send(req.session['currentUser']);
+// };
 
-exports.register = (res, req) => {
-    var newUser = {
-        username: req.body.username,
-        password: req.body.password,
-        firstName: '',
-        lastName: '',
-        type: "INVESTOR",
-        wallet: 0
-    };
-    userDao.findUserByUsername(req.body.username)
-        .then(user => {
-            if (user) {
-                res.send(400);
-            } else {
-                userDao.createUser(newUser)
-                    .then((user) => {
-                        req.session['currentUser'] = user;
-                        res.send(user);
-                    }).catch((err) => {
-                    res.json({err});
-                });
-            }
-        }).catch((err) => {
-        res.json({err});
-    });
-};
+// exports.register = (res, req) => {
+//     var newUser = {
+//         username: req.body.username,
+//         password: req.body.password,
+//         firstName: '',
+//         lastName: '',
+//         type: "INVESTOR",
+//         wallet: 0
+//     };
+//     userDao.findUserByUsername(req.body.username)
+//         .then(user => {
+//             if (user) {
+//                 res.send(400);
+//             } else {
+//                 userDao.createUser(newUser)
+//                     .then((user) => {
+//                         req.session['currentUser'] = user;
+//                         res.send(user);
+//                     }).catch((err) => {
+//                     res.json({err});
+//                 });
+//             }
+//         }).catch((err) => {
+//         res.json({err});
+//     });
+// };

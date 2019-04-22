@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.post('/api/register', function(req, res) {
+app.post('/api/register', function (req, res) {
     var newUser = {
         username: req.body.username,
         password: req.body.password,
@@ -73,6 +73,11 @@ app.post('/api/register', function(req, res) {
         res.json({err});
     });
 });
+
+app.get('/api/profile', function (req, res) {
+        res.send(req.session['currentUser']);
+    }
+);
 
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
