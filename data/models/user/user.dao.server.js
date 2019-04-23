@@ -35,7 +35,7 @@ findAllUsers = () =>
 
 updateUser = (id, user) =>
     userModel
-        .update({id: id}, {$set: user});
+        .updateOne({_id: id}, {$set: user});
 
 deleteUser = id =>
     userModel

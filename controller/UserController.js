@@ -11,8 +11,9 @@ exports.register = (req, res) => {
         password: req.body.password,
         firstName: '',
         lastName: '',
-        type: "INVESTOR",
-        wallet: 0
+        type: req.body.type,
+        wallet: 0,
+        broker: req.body.broker
     };
     userDao.findUserByUsername(req.body.username)
         .then(user => {
@@ -90,7 +91,8 @@ exports.update = (req, res) => {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 type: req.body.type,
-                wallet: req.body.wallet
+                wallet: req.body.wallet,
+                broker: req.body.broker
             })
         .then(status => {
             res.json({
