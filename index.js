@@ -81,7 +81,10 @@ app.post('/api/register', function (req, res) {
 });
 
 app.get('/api/profile', function (req, res) {
-        res.send(req.session['currentUser']);
+        if (req.session.currentUser) {
+            res.send(req.session['currentUser']);
+        }
+        res.send(400);
     }
 );
 
