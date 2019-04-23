@@ -15,10 +15,10 @@ findAllCrpyto = () =>
 
 updateCrypto = (id, crypto) =>
     cryptoModel
-        .update({id: id}, {$set: crypto});
+        .update({_id: id}, {$set: crypto});
 
 deleteCrypto = id =>
     cryptoModel
-        .remove({id: id});
+        .remove({_id: id});
 
 module.exports = {createCrypto, findCryptoById, findAllCrpyto, updateCrypto, deleteCrypto}
