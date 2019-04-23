@@ -4,40 +4,6 @@ const userSchema = require('../data/models/user/user.schema.server');
 const userModel = mongoose.model('UserModel', userSchema);
 const userDao = require('../data/models/user/user.dao.server');
 
-
-exports.register = (req, res) => {
-    var newUser = {
-        username: req.body.username,
-        password: req.body.password,
-        firstName: '',
-        lastName: '',
-        type: req.body.type,
-        wallet: 0,
-        broker: req.body.broker
-    };
-    userDao.findUserByUsername(req.body.username)
-        .then(user => {
-            if (user) {
-                res.send(400);
-            } else {
-                userDao.createUser(newUser)
-                    .then((user) => {
-                        req.session['currentUser'] = user;
-                        res.send(user);
-                    }).catch((err) => {
-                    res.json({err});
-                });
-            }
-        }).catch((err) => {
-        res.json({err});
-    });
-};
-
-
-exports.profile = (req, res) => {
-    res.send(req.session['currentUser']);
-};
-
 exports.index = (req, res) => {
     userModel.find((err, users) => {
         if (err) {
@@ -171,30 +137,3 @@ exports.profile = (res, req) => {
     }
     res.send(400);
 };
-
-// exports.register = (res, req) => {
-//     var newUser = {
-//         username: req.body.username,
-//         password: req.body.password,
-//         firstName: '',
-//         lastName: '',
-//         type: "INVESTOR",
-//         wallet: 0
-//     };
-//     userDao.findUserByUsername(req.body.username)
-//         .then(user => {
-//             if (user) {
-//                 res.send(400);
-//             } else {
-//                 userDao.createUser(newUser)
-//                     .then((user) => {
-//                         req.session['currentUser'] = user;
-//                         res.send(user);
-//                     }).catch((err) => {
-//                     res.json({err});
-//                 });
-//             }
-//         }).catch((err) => {
-//         res.json({err});
-//     });
-// };
