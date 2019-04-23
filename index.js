@@ -16,7 +16,13 @@ const userDao = require('./data/models/user/user.dao.server');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(cors());
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
+    credentials: true
+}));
+
 app.use(bodyParser.json());
 app.use(session({
     resave: false,
