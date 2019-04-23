@@ -90,3 +90,7 @@ exports.deleteTrade = (req, res) => {
     tradeDao.deleteCrypto(req.params.tid)
         .then(response => res.send(response))
 };
+
+exports.deleteAllTrades = (req, res) => {
+    tradeModel.remove().then(response => res.send(response))
+}
