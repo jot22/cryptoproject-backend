@@ -100,6 +100,29 @@ app.post('/api/logout', function (req, res) {
     res.send(200);
 });
 
+app.put('/api/user/:id', function(req, res) {
+    let user = {
+        username: req.body.username,
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        type: req.body.type,
+        phone: req.body.phone,
+        email: req.body.email,
+        clients: req.body.clients,
+        broker: req.body.broker
+    }
+    userDao
+        .updateUser(req.params.id, user)
+        .then(status => {
+            req.session['currentUser'] = user;
+            res.json({
+                status: "success",
+                message: status
+            });
+        });
+});
+
 app.get('/api/profile', function (req, res) {
     if (req.session.currentUser) {
         res.send(req.session['currentUser']);
@@ -107,13 +130,6 @@ app.get('/api/profile', function (req, res) {
     res.send(400);
     }
 );
-
-app.get('/api/user', function(req, res) {
-    if (req.session.currentUser) {
-        res.send(req.session['currentUser']);
-    }
-    res.send(400);
-});
 
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
