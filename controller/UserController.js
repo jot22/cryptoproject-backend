@@ -27,7 +27,8 @@ exports.new = (req, res) => {
         phone: req.body.phone,
         email: req.body.email,
         wallet: req.body.wallet,
-        following: req.body.following
+        following: req.body.following,
+        clients: req.body.clients
     }).then(newUser => {
         res.json(newUser)
     })

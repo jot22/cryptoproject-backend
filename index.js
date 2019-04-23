@@ -110,8 +110,9 @@ app.put('/api/user/:id', function(req, res) {
         phone: req.body.phone,
         email: req.body.email,
         clients: req.body.clients,
-        broker: req.body.broker
-    }
+        broker: req.body.broker,
+        following: req.body.following
+    };
     userDao
         .updateUser(req.params.id, user)
         .then(status => {
