@@ -18,6 +18,7 @@ exports.updateTrade = function (req, res) {
             {
                 tokens: req.body.tokens,
                 priceWhenBought: req.body.priceWhenBought,
+                priceWhenSold: req.body.priceWhenSold,
                 sold: req.body.sold,
                 status: req.body.status,
                 crypto: req.body.crypto,
@@ -60,6 +61,7 @@ exports.sell = (req, res) => {
                     _id: trade._id,
                     tokens: trade.tokens,
                     priceWhenBought: trade.priceWhenBought,
+                    priceWhenSold: trade.priceWhenSold,
                     sold: true,
                     status: trade.status,
                     crypto: trade.crypto,

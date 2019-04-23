@@ -4,6 +4,7 @@ const status = ["PENDING", "PROCESSED"];
 const tradeSchema = mongoose.Schema({
     tokens: {type: Number, required: true},
     priceWhenBought: {type: Number, required: true},
+    priceWhenSold: Number,
     sold: Boolean,
     status: {type: String, enum: status, required: true},
     crypto: Number,

@@ -26,7 +26,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(session({
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     secret: 'sea cret'
 }));
 // Connect to Mongoose and set connection variable
@@ -90,9 +90,7 @@ app.post('/api/login', function (req, res) {
             } else {
                 res.send(400);
             }
-        }).catch((err) => {
-        res.json({err});
-    })
+        })
 });
 
 app.post('/api/logout', function (req, res) {
@@ -119,7 +117,7 @@ app.put('/api/user/:id', function(req, res) {
                 if (!response.clients.includes(req.params.id)) {
                     console.log(req.body.clients);
                     response.clients.push(req.params.id);
-                    userDao.updateUser(req.body.broker, response) .then(status => {
+                    userDao.updateUser(req.body.broker, response).then(status => {
                         userDao
                             .updateUser(req.params.id, newUser)
                             .then(status => {
