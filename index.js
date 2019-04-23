@@ -53,15 +53,60 @@ app.use(function (req, res, next) {
     next();
 });
 
-// app.post('/api/register', function (req, res) {
-//
-// });
+app.post('/api/register', function (req, res) {
+    var newUser = {
+        username: req.body.username,
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        type: req.body.role
+    };
+    userDao.findUserByUsername(req.body.username)
+        .then(user => {
+            if (user) {
+                res.send(400);
+            } else {
+                userDao.createUser(newUser)
+                    .then((user) => {
+                        req.session['currentUser'] = user;
+                        res.send(user);
+                    }).catch((err) => {
+                    res.json({err});
+                });
+            }
+        }).catch((err) => {
+        res.json({err});
+    });
+});
 
-// app.get('/api/profile', function (req, res) {
-//
-// );
+app.post('/api/login', function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    userDao.findUserByCredentials(username, password)
+        .then(user => {
+            if (user) {
+                req.session['currentUser'] = user;
+                res.send(user);
+            } else {
+                res.send(400);
+            }
+        }).catch((err) => {
+        res.json({err});
+    })
+});
 
+app.post('/api/logout', function (req, res) {
+    req.session.destroy();
+    res.send(200);
+});
 
+app.get('/api/profile', function (req, res) {
+    if (req.session.currentUser) {
+        res.send(req.session['currentUser']);
+    }
+    res.send(400);
+    }
+);
 
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);

@@ -83,57 +83,56 @@ exports.findAll = (req, res) => {
         .then(users => res.send(users))
 };
 
-exports.register = (req, res) => {
-    var newUser = {
-        username: req.body.username,
-        password: req.body.password,
-        firstName: '',
-        lastName: '',
-        type: "INVESTOR",
-        wallet: 0
-    };
-    userDao.findUserByUsername(req.body.username)
-        .then(user => {
-            if (user) {
-                res.send(400);
-            } else {
-                userDao.createUser(newUser)
-                    .then((user) => {
-                        req.session['currentUser'] = user;
-                        res.send(user);
-                    }).catch((err) => {
-                    res.json({err});
-                });
-            }
-        }).catch((err) => {
-        res.json({err});
-    });
-}
+// exports.register = (req, res) => {
+//     var newUser = {
+//         username: req.body.username,
+//         password: req.body.password,
+//         firstName: req.body.firstName,
+//         lastName: req.body.lastName,
+//         type: req.body.role
+//     };
+//     userDao.findUserByUsername(req.body.username)
+//         .then(user => {
+//             if (user) {
+//                 res.send(400);
+//             } else {
+//                 userDao.createUser(newUser)
+//                     .then((user) => {
+//                         req.session['currentUser'] = user;
+//                         res.send(user);
+//                     }).catch((err) => {
+//                     res.json({err});
+//                 });
+//             }
+//         }).catch((err) => {
+//         res.json({err});
+//     });
+// };
 
-exports.login = (req, res) => {
-    var username = req.body.username;
-    var password = req.body.password;
-    userDao.findUserByCredentials(username, password)
-        .then(user => {
-            if (user) {
-                req.session['currentUser'] = user;
-                res.send(user);
-            } else {
-                res.send(400);
-            }
-        }).catch((err) => {
-        res.json({err});
-    })
-};
-
-exports.logout = (res, req) => {
-    req.session.destroy();
-    res.send(200);
-};
-
-exports.profile = (res, req) => {
-    if (req.session.currentUser) {
-        res.send(req.session['currentUser']);
-    }
-    res.send(400);
-};
+// exports.login = (req, res) => {
+//     var username = req.body.username;
+//     var password = req.body.password;
+//     userDao.findUserByCredentials(username, password)
+//         .then(user => {
+//             if (user) {
+//                 req.session['currentUser'] = user;
+//                 res.send(user);
+//             } else {
+//                 res.send(400);
+//             }
+//         }).catch((err) => {
+//         res.json({err});
+//     })
+// };
+//
+// exports.logout = (res, req) => {
+//     req.session.destroy();
+//     res.send(200);
+// };
+//
+// exports.profile = (res, req) => {
+//     if (req.session.currentUser) {
+//         res.send(req.session['currentUser']);
+//     }
+//     res.send(400);
+// };
