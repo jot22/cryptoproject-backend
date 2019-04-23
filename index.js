@@ -53,40 +53,15 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.post('/api/register', function (req, res) {
-    var newUser = {
-        username: req.body.username,
-        password: req.body.password,
-        firstName: '',
-        lastName: '',
-        type: "INVESTOR",
-        wallet: 0
-    };
-    userDao.findUserByUsername(req.body.username)
-        .then(user => {
-            if (user) {
-                res.send(400);
-            } else {
-                userDao.createUser(newUser)
-                    .then((user) => {
-                        req.session['currentUser'] = user;
-                        res.send(user);
-                    }).catch((err) => {
-                    res.json({err});
-                });
-            }
-        }).catch((err) => {
-        res.json({err});
-    });
-});
+// app.post('/api/register', function (req, res) {
+//
+// });
 
-app.get('/api/profile', function (req, res) {
-        if (req.session.currentUser) {
-            res.send(req.session['currentUser']);
-        }
-        res.send(400);
-    }
-);
+// app.get('/api/profile', function (req, res) {
+//
+// );
+
+
 
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);

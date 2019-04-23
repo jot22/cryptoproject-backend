@@ -69,11 +69,11 @@ router.route('/login')
 router.route('/logout')
     .post(userController.logout);
 
-// router.route('/profile')
-//     .get(userController.profile);
+router.route('/profile')
+    .get(userController.profile);
 
-// router.route('/register')
-//     .post(userController.register);
+router.route('/register')
+    .post(userController.register);
 
 // Export API routes
 module.exports = router;
