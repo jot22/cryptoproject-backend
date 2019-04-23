@@ -101,7 +101,7 @@ app.post('/api/logout', function (req, res) {
 });
 
 app.put('/api/user/:id', function(req, res) {
-    let user = {
+    let newUser = {
         username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
@@ -113,10 +113,31 @@ app.put('/api/user/:id', function(req, res) {
         broker: req.body.broker,
         following: req.body.following
     };
+    if(newUser.broker != null) {
+        userDao.findUserById(req.body.broker).then(response => {
+            console.log(response);
+                if (!response.clients.includes(req.params.id)) {
+                    console.log(req.body.clients);
+                    response.clients.push(req.params.id);
+                    userDao.updateUser(req.body.broker, response) .then(status => {
+                        userDao
+                            .updateUser(req.params.id, newUser)
+                            .then(status => {
+                                req.session['currentUser'] = newUser;
+                                res.json({
+                                    status: "success",
+                                    message: status
+                                });
+                            });
+                    })
+                }
+            }
+        );
+    }
     userDao
-        .updateUser(req.params.id, user)
+        .updateUser(req.params.id, newUser)
         .then(status => {
-            req.session['currentUser'] = user;
+            req.session['currentUser'] = newUser;
             res.json({
                 status: "success",
                 message: status
