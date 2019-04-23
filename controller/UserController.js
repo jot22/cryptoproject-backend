@@ -62,6 +62,7 @@ exports.update = (req, res) => {
                 type: req.body.type,
                 phone: req.body.phone,
                 email: req.body.email,
+                clients: req.body.clients,
                 broker: req.body.broker
             })
         .then(status => {
