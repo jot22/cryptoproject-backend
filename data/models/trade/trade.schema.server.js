@@ -7,7 +7,7 @@ const tradeSchema = mongoose.Schema({
     priceWhenSold: Number,
     sold: Boolean,
     status: {type: String, enum: status, required: true},
-    crypto: {type: mongoose.Schema.Types.ObjectId, ref: 'CryptoModel'},
+    crypto: Number,
     investor: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'},
     broker: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}
 }, {collection: 'purchases'});

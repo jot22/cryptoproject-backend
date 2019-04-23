@@ -35,7 +35,8 @@ router.route('/crypto/:id')
     .delete(cryptoController.delete);
 
 router.route('/trade')
-    .get(tradeController.index);
+    .get(tradeController.index)
+    .delete(tradeController.deleteAllTrades);
 
 router.route('/investor/:iid/trade')
     .get(tradeController.findTradesByInvestor);
@@ -51,7 +52,8 @@ router.route('/crypto/:cid/trade')
     .delete(tradeController.removeCrypto);
 
 router.route('/trade/:tid')
-    .put(tradeController.updateTrade);
+    .put(tradeController.updateTrade)
+    .delete(tradeController.deleteTrade);
 
 
 router.route('/coin')
