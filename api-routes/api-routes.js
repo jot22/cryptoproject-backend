@@ -14,6 +14,7 @@ var cryptoController = require('../controller/CryptoController');
 var tradeController = require('../controller/TradeController');
 var coinMarketController = require('../controller/CoinMarketController');
 var userController = require('../controller/UserController');
+var followingController = require('../controller/FollowingController');
 
 router.route('/user')
     .get(userController.findAll)
@@ -61,6 +62,20 @@ router.route('/coin')
 
 router.route('/coin/:symbol')
     .get(coinMarketController.get);
+
+router.route('/following')
+    .get(followingController.findAllFollowings)
+    .post(followingController.createFollowing)
+    .delete(followingController.deleteFollowing);
+
+router.route('/following/:id')
+    .get(followingController.findFollowingById)
+    .put(followingController.addToFollowing)
+    .delete(followingController.removeFromFollowing);
+
+router.route('/following/:id/user')
+    .get(followingController.findFollowingByUserId)
+    .delete(followingController.deleteFollowing);
 
 // Export API routes
 module.exports = router;
