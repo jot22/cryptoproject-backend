@@ -11,6 +11,27 @@ exports.buy = function (req, res) {
     }).then(newTrade => res.json(newTrade))
 };
 
+exports.updateTrade = function(req, res) {
+    tradeDao
+        .updateTrade(
+            req.params.id,
+            {
+                tokens: req.body.tokens,
+                priceWhenBought: req.body.priceWhenBought,
+                sold: req.body.sold,
+                status: req.body.status,
+                crypto: req.body.crypto,
+                investor: req.body.investor,
+                broker: req.body.broker
+            })
+        .then(status => {
+            res.json({
+                status: "success",
+                message: status
+            });
+        });
+}
+
 exports.index = function (req, res) {
     tradeDao.findAllTrades()
         .then(trades => res.json(trades));

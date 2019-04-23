@@ -35,11 +35,11 @@ findAllUsers = () =>
 
 updateUser = (id, user) =>
     userModel
-        .update({_id: id}, {$set: user});
+        .update({id: id}, {$set: user});
 
 deleteUser = id =>
     userModel
-        .remove({_id: id});
+        .remove({id: id});
 
 module.exports = {
     createUser, findUserById, findAllUsers, updateUser, deleteUser,
