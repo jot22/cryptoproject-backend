@@ -7,7 +7,7 @@ createUser = (investor) =>
     userModel.create(investor);
 
 findUserById = userId =>
-    userModel.findById(userId);
+    userModel.findById(userId).populate('clients');
 
 findUserByUsername = username =>
     userModel.find({username: username})
