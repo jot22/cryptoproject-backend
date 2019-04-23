@@ -11,7 +11,7 @@ exports.buy = function (req, res) {
     }).then(newTrade => res.json(newTrade))
 };
 
-exports.updateTrade = function(req, res) {
+exports.updateTrade = function (req, res) {
     tradeDao
         .updateTrade(
             req.params.id,
@@ -37,17 +37,17 @@ exports.index = function (req, res) {
         .then(trades => res.json(trades));
 };
 
-exports.findTradesByInvestor = function(req, res) {
+exports.findTradesByInvestor = function (req, res) {
     tradeDao.findTradesByInvestor(req.params.iid)
         .then(trades => res.json(trades));
 };
 
-exports.findTradesByBroker = function(req, res) {
+exports.findTradesByBroker = function (req, res) {
     tradeDao.findTradesByBroker(req.params.bid)
         .then(trades => res.json(trades));
 };
 
-exports.findTradeByCrypto = function(req, res) {
+exports.findTradeByCrypto = function (req, res) {
     tradeDao.findTradesByCrypto(req.params.cid)
         .then(trades => res.json(trades));
 };
@@ -58,7 +58,7 @@ exports.sell = (req, res) => {
             .sellCrypto(
                 req.params.id, {
                     _id: trade._id,
-                    tokens:  trade.tokens,
+                    tokens: trade.tokens,
                     priceWhenBought: trade.priceWhenBought,
                     sold: true,
                     status: trade.status,
@@ -76,7 +76,7 @@ exports.sell = (req, res) => {
 exports.removeCrypto = (req, res) => {
     tradeModel.remove({
         _id: req.params.id
-    }, (err, crypto) =>{
+    }, (err, crypto) => {
         if (err)
             res.send(err);
         res.json({
@@ -84,4 +84,9 @@ exports.removeCrypto = (req, res) => {
             message: 'Crypto deleted'
         });
     });
+};
+
+exports.deleteTrade = (req, res) => {
+    tradeDao.deleteCrypto(req.params.tid)
+        .then(response => res.send(response))
 };
