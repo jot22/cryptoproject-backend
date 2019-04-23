@@ -39,7 +39,7 @@ updateUser = (id, user) =>
 
 deleteUser = id =>
     userModel
-        .remove({id: id});
+        .remove({_id: id});
 
 module.exports = {
     createUser, findUserById, findAllUsers, updateUser, deleteUser,
