@@ -22,7 +22,6 @@ router.route('/user')
 
 router.route('/user/:id')
     .get(userController.findById)
-    .put(userController.update)
     .delete(userController.delete);
 
 router.route('/crypto')

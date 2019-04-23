@@ -24,6 +24,8 @@ exports.new = (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         type: req.body.type,
+        phone: req.body.phone,
+        email: req.body.email,
         wallet: req.body.wallet,
         following: req.body.following
     }).then(newUser => {
@@ -58,6 +60,8 @@ exports.update = (req, res) => {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 type: req.body.type,
+                phone: req.body.phone,
+                email: req.body.email,
                 broker: req.body.broker
             })
         .then(status => {

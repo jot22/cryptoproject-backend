@@ -108,6 +108,13 @@ app.get('/api/profile', function (req, res) {
     }
 );
 
+app.get('/api/user', function(req, res) {
+    if (req.session.currentUser) {
+        res.send(req.session['currentUser']);
+    }
+    res.send(400);
+});
+
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
