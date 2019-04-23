@@ -58,7 +58,8 @@ exports.new = (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         type: req.body.type,
-        wallet: req.body.wallet
+        wallet: req.body.wallet,
+        following: req.body.following
     }).then(newUser => {
         res.json(newUser)
     })
@@ -92,7 +93,8 @@ exports.update = (req, res) => {
                 lastName: req.body.lastName,
                 type: req.body.type,
                 wallet: req.body.wallet,
-                broker: req.body.broker
+                broker: req.body.broker,
+                following: req.body.following
             })
         .then(status => {
             res.json({

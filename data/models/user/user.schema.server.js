@@ -8,6 +8,7 @@ const investorSchema = mongoose.Schema({
     lastName: String,
     type: {type: String, enum: userTypes},
     wallet: Number,
-    broker: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}
+    broker: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'},
+    following: [{type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}]
 }, {collection: 'users'});
 module.exports = investorSchema;
