@@ -14,7 +14,7 @@ exports.buy = function (req, res) {
 exports.updateTrade = function (req, res) {
     tradeDao
         .updateTrade(
-            req.params.id,
+            req.params.tid,
             {
                 tokens: req.body.tokens,
                 priceWhenBought: req.body.priceWhenBought,
