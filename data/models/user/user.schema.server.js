@@ -7,6 +7,7 @@ const investorSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     type: {type: String, enum: userTypes, required: true},
-    wallet: Number
+    wallet: Number,
+    broker: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}
 }, {collection: 'users'});
 module.exports = investorSchema;
