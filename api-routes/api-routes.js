@@ -64,5 +64,8 @@ router.route('/coin')
 router.route('/coin/:symbol')
     .get(coinMarketController.get);
 
+router.route('/coins/:id')
+    .get(coinMarketController.getById);
+
 // Export API routes
 module.exports = router;
