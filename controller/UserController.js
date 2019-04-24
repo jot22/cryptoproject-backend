@@ -86,3 +86,14 @@ exports.findAll = (req, res) => {
     userDao.findAllUsers()
         .then(users => res.send(users))
 };
+
+exports.findByUsername = (req, res) => {
+    userDao.findUserByUsername(req.params.name)
+        .then(user => {
+            if (user) {
+                res.send(400);
+            } else {
+                res.send(200);
+            }
+        });
+};
