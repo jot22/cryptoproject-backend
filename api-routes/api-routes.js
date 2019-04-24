@@ -79,7 +79,7 @@ router.route('/following/:id')
     .delete(followingController.removeFromFollowing);
 
 router.route('/following/:id/user')
-    .get(followingController.findFollowingByUserId)
+    .put(followingController.findFollowingByUserId)
     .delete(followingController.deleteFollowing);
 
 // Export API routes

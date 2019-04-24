@@ -14,6 +14,7 @@ exports.findAllFollowings = (req, res) => {
 };
 
 exports.findFollowingByUserId = (req, res) => {
+    console.log(req.body.user);
     followingDao.findFollowingByUserId(req.body.user).then(response =>
         res.json(response)
     )
@@ -29,10 +30,8 @@ exports.findFollowingById = (req, res) => {
 
 exports.addToFollowing = (req,res) => {
     if (req.body.newFollow != null) {
-        followingDao.findFollowingById(req.params.id).then(response => {
-            console.log(response);
+        followingDao.findFollowingByUserId(req.body.user).then(response => {
             if (!response.following.includes(req.body.newFollow)) {
-                console.log(req.body.following);
                 response.following.push(req.body.newFollow);
                 followingDao.updateFollowing(req.params.id, response).then(status => {
                     res.json({
@@ -48,7 +47,6 @@ exports.addToFollowing = (req,res) => {
 exports.removeFromFollowing = (req, res) => {
     if (req.body.newFollow != null) {
         followingDao.findFollowingByUserId(req.body.user).then(response => {
-            console.log(response);
             var index = response.following.indexOf(req.body.newFollow);
             if (index > -1) {
                 response.following.splice(index, 1);
