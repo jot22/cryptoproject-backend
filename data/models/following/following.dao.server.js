@@ -18,8 +18,8 @@ findFollowingById = followingId =>
 
 findAllFollowing = () =>
     followingModel.find()
-        .populate('user', 'username -_id')
-        .populate('following', 'username -_id');
+        .populate('user', 'firstName -_id')
+        .populate('following', 'firstName -_id');
 
 findFollowingByUserId = userId =>
     followingModel.find({user: userId})
@@ -29,7 +29,8 @@ findFollowingByUserId = userId =>
             } else {
                 return users[0];
             }
-        });
+        })
+
 
 deleteFollowing = id =>
     followingModel
