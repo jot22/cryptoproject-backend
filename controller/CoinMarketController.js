@@ -11,7 +11,7 @@ exports.get = function (req, res) {
             symbol: coinSymbol
         },
         headers: {
-            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+            'X-CMC_PRO_API_KEY': '1bc92859-ebcc-434c-9283-fd0084d77dba'
         },
         json: true,
         gzip: true
@@ -42,7 +42,7 @@ exports.getById = function (req, res) {
             id: coinSymbol
         },
         headers: {
-            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+            'X-CMC_PRO_API_KEY': '1bc92859-ebcc-434c-9283-fd0084d77dba'
         },
         json: true,
         gzip: true
@@ -62,7 +62,7 @@ exports.update = (req, res) => {
             convert: 'USD'
         },
         headers: {
-            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+            'X-CMC_PRO_API_KEY': '1bc92859-ebcc-434c-9283-fd0084d77dba'
         },
         json: true,
         gzip: true
@@ -95,7 +95,7 @@ exports.findAll = (req, res) => {
             convert: 'USD'
         },
         headers: {
-            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+            'X-CMC_PRO_API_KEY': '1bc92859-ebcc-434c-9283-fd0084d77dba'
         },
         json: true,
         gzip: true
@@ -114,7 +114,7 @@ exports.globalMetrics = (req,res) => {
         qs: {
         },
         headers: {
-            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+            'X-CMC_PRO_API_KEY': '1bc92859-ebcc-434c-9283-fd0084d77dba'
         },
         json: true,
         gzip: true
