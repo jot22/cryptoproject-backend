@@ -19,7 +19,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    // origin: 'http://localhost:3000',
+    origin: 'https://guarded-bayou-82111.herokuapp.com',
     exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
     credentials: true
 }));
@@ -32,9 +33,10 @@ app.use(session({
 }));
 // Connect to Mongoose and set connection variable
 const databaseName = 'crypto';
-var connectionString =
-    'mongodb://localhost/';
-connectionString += databaseName;
+// var connectionString =
+//     'mongodb://localhost/';
+// connectionString += databaseName;
+var connectionString = 'mongodb://heroku_d02ng6sn:4ohg3pfgnf903c85usakd2j1o@ds145916.mlab.com:45916/heroku_d02ng6sn';
 mongoose.connect(connectionString);
 var db = mongoose.connection;
 // Setup server port
@@ -45,7 +47,8 @@ app.get('/', (req, res) => res.send('Hello World'));
 app.use('/api', apiRoutes)
 // Launch app to listen to specified port
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    // res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Origin", "https://guarded-bayou-82111.herokuapp.com");
     res.header("Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods",
