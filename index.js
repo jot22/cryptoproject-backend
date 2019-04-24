@@ -10,6 +10,7 @@ const userSchema = require('./data/models/user/user.schema.server');
 const userModel = mongoose.model('UserModel', userSchema);
 let userController = require('./controller/UserController');
 const userDao = require('./data/models/user/user.dao.server');
+const followingDao = require('./data/models/following/following.dao.server')
 
 
 // Configure bodyparser to handle post requests
@@ -68,8 +69,14 @@ app.post('/api/register', function (req, res) {
             } else {
                 userDao.createUser(newUser)
                     .then((user) => {
-                        req.session['currentUser'] = user;
-                        res.send(user);
+                        followingDao.createFollowing(user._id, []).then(newerUser => {
+                            console.log(newerUser);
+                            req.session['currentUser'] = user;
+                            res.send(user);
+                        }).catch(err => {
+                            res.json({err})
+                        })
+
                     }).catch((err) => {
                     res.json({err});
                 });
