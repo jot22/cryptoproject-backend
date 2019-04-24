@@ -33,6 +33,25 @@ exports.get = function (req, res) {
     //     res.json({err});
     // });
 };
+exports.getById = function (req, res) {
+    const coinSymbol = req.params.id;
+    const requestOptions = {
+        method: 'GET',
+        uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest',
+        qs: {
+            id: coinSymbol
+        },
+        headers: {
+            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+        },
+        json: true,
+        gzip: true
+    };
+
+    rp(requestOptions).then(response => {
+        res.send(response)
+    });
+};
 
 exports.update = (req, res) => {
     const requestOptions = {

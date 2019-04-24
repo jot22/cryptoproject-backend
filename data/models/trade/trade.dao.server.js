@@ -30,7 +30,6 @@ findTradeById = tradeId =>
 
 findAllTrades = () =>
     tradeModel.find()
-        .populate('crypto', 'name -_id')
         .populate('broker', 'username -_id')
         .populate('investor', 'username -_id');
 
