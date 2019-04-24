@@ -25,6 +25,9 @@ router.route('/user/:id')
     .get(userController.findById)
     .delete(userController.delete);
 
+router.route('/user/username/:name')
+    .get(userController.findByUsername);
+
 router.route('/crypto')
     .get(cryptoController.index)
     .post(cryptoController.new);

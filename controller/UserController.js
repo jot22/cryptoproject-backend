@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = require('../data/models/user/user.schema.server');
 const userModel = mongoose.model('UserModel', userSchema);
 const userDao = require('../data/models/user/user.dao.server');
-
+const followingDao = require("../data/models/following/following.dao.server");
 exports.index = (req, res) => {
     userModel.find((err, users) => {
         if (err) {
@@ -18,7 +18,6 @@ exports.index = (req, res) => {
 
 exports.new = (req, res) => {
     userDao.createUser({
-        _id: req.body._id,
         username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
@@ -27,10 +26,13 @@ exports.new = (req, res) => {
         phone: req.body.phone,
         email: req.body.email,
         wallet: req.body.wallet,
-        following: req.body.following,
         clients: req.body.clients
     }).then(newUser => {
-        res.json(newUser)
+        console.log(newUser);
+        followingDao.createFollowing(newUser._id, []).then(newUser => {
+            res.json(newUser)
+        })
+            .catch(err => res.json(err));
     })
 };
 
@@ -85,4 +87,15 @@ exports.findById = (req, res) => {
 exports.findAll = (req, res) => {
     userDao.findAllUsers()
         .then(users => res.send(users))
+};
+
+exports.findByUsername = (req, res) => {
+    userDao.findUserByUsername(req.params.name)
+        .then(user => {
+            if (user) {
+                res.send(400);
+            } else {
+                res.send(200);
+            }
+        });
 };
