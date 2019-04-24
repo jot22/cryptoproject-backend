@@ -106,3 +106,21 @@ exports.findAll = (req, res) => {
         res.json(err);
     });
 };
+
+exports.globalMetrics = (req,res) => {
+    const requestOptions = {
+        method: 'GET',
+        uri: 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest',
+        qs: {
+        },
+        headers: {
+            'X-CMC_PRO_API_KEY': '1094ecde-497e-414a-8d99-74401970bce3'
+        },
+        json: true,
+        gzip: true
+    };
+
+    rp(requestOptions).then(response => {
+        res.send(response)
+    });
+};

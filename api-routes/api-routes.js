@@ -82,5 +82,8 @@ router.route('/following/:id/user')
     .put(followingController.findFollowingByUserId)
     .delete(followingController.deleteFollowing);
 
+router.route('/globalmetrics')
+    .get(coinMarketController.globalMetrics);
+
 // Export API routes
 module.exports = router;
